@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className='relative bg-[url(/movie-theater-signboard.png)] bg-cover bg-[position:50%_60%] bg-no-repeat w-full p-10 flex justify-between items-center overflow-hidden'>
-    <div className='absolute inset-0 bg-black/50 z-0'></div>
-    <img className='h-[70px] w-auto relative z-10' src={logo} alt="" />
-    <ul className='flex gap-10 items-center relative z-10'>
+    <nav className='bg-gradient-to-b from-blue-400 to-blue-300 w-full p-10 flex justify-between items-center'>
+    <img className='h-[70px] w-auto' src={logo} alt="" />
+    <ul className='flex gap-10 items-center'>
         {navLinks.map((link) => (
-            <li key={link.label} className={link.className}>
-                <Link to={link.path}>{link.label}</Link>
+            <li key={link.label}>
+                <Link to={link.path} className={link.className}>{link.label}</Link>
             </li>
         ))}
     </ul>
