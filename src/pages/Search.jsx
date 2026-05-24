@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const Search = () => {
   const [movies, setMovies] = useState([]);
@@ -13,6 +15,7 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [searchHistory, setSearchHistory] = useState([]);
+  const navigate = useNavigate();
 
   async function fetchMovies(query = searchValue, isUserSearch = false) {
     if (!query.trim()) return;
@@ -128,6 +131,7 @@ const Search = () => {
           {sortedMovies().map((movie) => (
             <div
               key={movie.imdbID}
+              onClick={() => navigate(`/movie/${movie.imdbID}`)}
               className="hover:scale-105 transition-all duration-300 cursor-pointer"
             >
               <img
@@ -145,6 +149,7 @@ const Search = () => {
           {sortedMovies().map((movie) => (
             <div
               key={movie.imdbID}
+              onClick={() => navigate(`/movie/${movie.imdbID}`)}
               className="flex-shrink-0 w-72 cursor-pointer hover:scale-105 transition-all duration-300"
             >
               <img
