@@ -9,6 +9,7 @@ const MovieDetail = () => {
   const [loading, setLoading] = useState(true);
   const [similarLoading, setSimilarLoading] = useState(true)
   const navigate = useNavigate();
+  const [error, setError] = useState('')
 
   async function fetchMovies() {
     try {
@@ -23,6 +24,7 @@ const MovieDetail = () => {
       );
       if (similar.Search) setSimilarMovies(similar.Search.filter(m => m.imdbID !== id));
     } catch (err) {
+        setError('Something went wrong. Please try again')
     } finally {
       setLoading(false);
       setSimilarLoading(false);
@@ -57,6 +59,7 @@ const MovieDetail = () => {
       >
         ←
       </button>
+      {error && <p className='text-red-500 text-center text-xl mt-4'>{error}</p>}
       <div className="flex p-10 gap-10">
         <img src={movie.Poster} alt="" />
         <div className="flex flex-col gap-4 text-xl">
