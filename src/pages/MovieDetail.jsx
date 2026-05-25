@@ -60,10 +60,10 @@ const MovieDetail = () => {
         ←
       </button>
       {error && <p className='text-red-500 text-center text-xl mt-4'>{error}</p>}
-      <div className="flex p-10 gap-10">
+      <div className="flex flex-col md:flex-row p-10 gap-10">
         <img src={movie.Poster} alt="" />
         <div className="flex flex-col gap-4 text-xl">
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-2xl md:text-4xl font-bold">
             {movie.Title} ({movie.Year})
           </h1>
           <p>

@@ -65,7 +65,7 @@ const Search = () => {
   return (
     <div className="bg-gradient-to-b from-blue-300 via-gray-300 to-slate-200 min-h-screen">
       <div className="flex flex-col items-center justify-center py-20">
-        <h1 className="text-6xl font-semibold mb-10">Browse our Movies</h1>
+        <h1 className="text-4xl md:text-6xl font-semibold mb-10">Browse our Movies</h1>
         <div className="relative w-full max-w-xl">
           <input
             value={searchValue}

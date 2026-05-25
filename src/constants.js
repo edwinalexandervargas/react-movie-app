@@ -2,12 +2,12 @@ const navLinks = [
   {
     label: "Home",
     path: "/",
-    className: "nav-link text-white text-2xl font-semibold",
+    className: "nav-link text-white text-lg md:text-2xl font-semibold",
   },
   {
     label: "Search",
     path: "/search",
-    className: "nav-link text-white text-2xl font-semibold",
+    className: "nav-link text-white text-lg md:text-2xl font-semibold",
   }
 ];
 
